@@ -6,6 +6,12 @@ WITH categorical_columns AS (
         'sex' AS column_name,
         Sex AS column_value
     FROM Patient
+    UNION ALL
+    SELECT DISTINCT
+        'ons_deaths' AS table_name,
+        'place' AS column_name,
+        Place_of_occurrence AS column_value
+    FROM ONS_Deaths
 )
 
 SELECT
