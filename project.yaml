@@ -4,12 +4,12 @@ expectations:
   population_size: 1000
 
 actions:
-  query_practice_registrations:
+  query_tpp:
     run: >
       sqlrunner:latest
-        --output output/results_practice_registrations.csv
+        --output output/results_tpp.csv
         --dummy-data-file analysis/dummy_results.csv
-        analysis/query_practice_registrations.sql
+        analysis/query_tpp.sql
     outputs:
       moderately_sensitive:
-        results: output/results_practice_registrations.csv
+        results: output/results_tpp.csv
