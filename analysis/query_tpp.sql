@@ -5,13 +5,13 @@ WITH categorical_columns AS (
     SELECT DISTINCT
         'addresses' AS table_name,
         'address_type' AS column_name,
-        AddressType AS column_value
+        CAST(AddressType AS VARCHAR(MAX)) AS column_value
     FROM PatientAddress
     UNION ALL
     SELECT DISTINCT
         'addresses' AS table_name,
         'rural_urban_classification' AS column_name,
-        RuralUrbanClassificationCode AS column_value
+        CAST(RuralUrbanClassificationCode AS VARCHAR(MAX)) AS column_value
     FROM PatientAddress
     UNION ALL
 
@@ -19,7 +19,7 @@ WITH categorical_columns AS (
     SELECT DISTINCT
         'appointments' AS table_name,
         'status' AS column_name,
-        Status AS column_value
+        CAST(Status AS VARCHAR(MAX)) AS column_value
     FROM Appointment
     UNION ALL
 
