@@ -86,13 +86,13 @@ WITH categorical_columns AS (
     UNION ALL
 
     -- sgss_covid_all_tests
-    SELECT
+    SELECT DISTINCT
         'sgss_covid_all_tests' AS table_name,
         'sgtf_status' AS column_name,
         SGTF AS column_value
     FROM SGSS_AllTests_Positive -- No SGSS_AllTests_Negative equivalent
     UNION ALL
-    SELECT
+    SELECT DISTINCT
         'sgss_covid_all_tests' AS table_name,
         'variant_detection_method' AS column_name,
         VariantDetectionMethod AS column_value
@@ -100,7 +100,7 @@ WITH categorical_columns AS (
     UNION ALL
 
     -- vaccinations
-    SELECT
+    SELECT DISTINCT
         'vaccinations' AS table_name,
         'target_disease' AS column_name,
         VaccinationContent AS column_value
@@ -108,13 +108,13 @@ WITH categorical_columns AS (
     UNION ALL
 
     -- wl_clockstops
-    SELECT
+    SELECT DISTINCT
         'wl_clockstops' AS table_name,
         'priority_type_code' AS column_name,
         PRIORITY_TYPE_CODE AS column_value
     FROM WL_ClockStops
     UNION ALL
-    SELECT
+    SELECT DISTINCT
         'wl_clockstops' AS table_name,
         'waiting_list_type' AS column_name,
         Waiting_List_Type AS column_value
@@ -122,13 +122,13 @@ WITH categorical_columns AS (
     UNION ALL
 
     -- wl_openpathways
-    SELECT
+    SELECT DISTINCT
         'wl_openpathways' AS table_name,
         'priority_type_code' AS column_name,
         PRIORITY_TYPE_CODE AS column_value
     FROM WL_OpenPathways
     UNION ALL
-    SELECT
+    SELECT DISTINCT
         'wl_openpathways' AS table_name,
         'waiting_list_type' AS column_name,
         Waiting_List_Type AS column_value
