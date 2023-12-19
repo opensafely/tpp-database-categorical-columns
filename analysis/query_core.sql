@@ -5,7 +5,7 @@ WITH categorical_columns AS (
     SELECT DISTINCT
         'Patient' AS table_name,
         'Sex' AS column_name,
-        Sex AS column_value
+        Sex AS category_code
     FROM Patient
     UNION ALL
 
@@ -13,13 +13,13 @@ WITH categorical_columns AS (
     SELECT DISTINCT
         'ONS_Deaths' AS table_name,
         'Place_of_occurrence' AS column_name,
-        Place_of_occurrence AS column_value
+        Place_of_occurrence AS category_code
     FROM ONS_Deaths
 )
 
 SELECT
     table_name,
     column_name,
-    column_value
+    category_code
 FROM categorical_columns
-ORDER BY table_name, column_name, column_value
+ORDER BY table_name, column_name, category_code
