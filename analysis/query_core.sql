@@ -3,16 +3,16 @@
 WITH categorical_columns AS (
     -- patients
     SELECT DISTINCT
-        'patients' AS table_name,
-        'sex' AS column_name,
+        'Patient' AS table_name,
+        'Sex' AS column_name,
         Sex AS column_value
     FROM Patient
     UNION ALL
 
     -- ons_deaths
     SELECT DISTINCT
-        'ons_deaths' AS table_name,
-        'place' AS column_name,
+        'ONS_Deaths' AS table_name,
+        'Place_of_occurrence' AS column_name,
         Place_of_occurrence AS column_value
     FROM ONS_Deaths
 )
