@@ -15,11 +15,27 @@ WITH categorical_columns AS (
         'Place_of_occurrence' AS column_name,
         Place_of_occurrence AS category_code
     FROM ONS_Deaths
+),
+
+data_dictionary AS (
+    SELECT
+        [Table] AS table_name,
+        Type AS column_name,
+        Code AS category_code,
+        Description AS category_name
+    FROM DataDictionary
 )
 
 SELECT
-    table_name,
-    column_name,
-    category_code
-FROM categorical_columns
-ORDER BY table_name, column_name, category_code
+    cc.table_name,
+    cc.column_name,
+    cc.category_code,
+    dd.category_name
+FROM categorical_columns AS cc
+LEFT OUTER JOIN
+    data_dictionary AS dd
+    ON
+        cc.table_name = dd.table_name
+        AND cc.column_name = dd.column_name
+        AND cc.category_code = dd.category_code
+ORDER BY cc.table_name, cc.column_name, cc.category_code
