@@ -23,28 +23,6 @@ WITH categorical_columns AS (
     FROM Appointment
     UNION ALL
 
-    -- ec
-    SELECT DISTINCT
-        'EC' AS table_name,
-        'SUS_HRG_Code' AS column_name,
-        SUS_HRG_Code AS category_code
-    FROM EC
-    UNION ALL
-
-    -- hospital_admissions
-    SELECT DISTINCT
-        'APCS' AS table_name,
-        'Admission_Method' AS column_name,
-        Admission_Method AS category_code
-    FROM APCS
-    UNION ALL
-    SELECT DISTINCT
-        'APCS' AS table_name,
-        'Patient_Classification' AS column_name,
-        Patient_Classification AS category_code
-    FROM APCS
-    UNION ALL
-
     -- opa
     SELECT DISTINCT
         'OPA' AS table_name,
@@ -64,20 +42,8 @@ WITH categorical_columns AS (
         First_Attendance AS category_code
     FROM OPA
     UNION ALL
-    SELECT DISTINCT
-        'OPA' AS table_name,
-        'HRG_Code' AS column_name,
-        HRG_Code AS category_code
-    FROM OPA
-    UNION ALL
 
     -- practice_registrations
-    SELECT DISTINCT
-        'Organisation' AS table_name,
-        'STPCode' AS column_name,
-        STPCode AS category_code
-    FROM Organisation
-    UNION ALL
     SELECT DISTINCT
         'Organisation' AS table_name,
         'Region' AS column_name,
@@ -97,14 +63,6 @@ WITH categorical_columns AS (
         'VariantDetectionMethod' AS column_name,
         VariantDetectionMethod AS category_code
     FROM SGSS_AllTests_Positive -- No SGSS_AllTests_Negative equivalent
-    UNION ALL
-
-    -- vaccinations
-    SELECT DISTINCT
-        'VaccinationReference' AS table_name,
-        'VaccinationContent' AS column_name,
-        VaccinationContent AS category_code
-    FROM VaccinationReference
     UNION ALL
 
     -- wl_clockstops
