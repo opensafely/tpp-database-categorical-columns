@@ -1,5 +1,5 @@
 -- This query is for a data development project that doesn't include T1OO data.
--- Consequently, this query doesn't reference the PatientsWithTypeOneDissent table.
+-- Consequently, this query doesn't reference the AllowedPatientsWithTypeOneDissent table.
 WITH categorical_columns AS (
     -- addresses
     SELECT DISTINCT
