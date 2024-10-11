@@ -99,6 +99,14 @@ WITH categorical_columns AS (
     FROM SGSS_AllTests_Positive -- No SGSS_AllTests_Negative equivalent
     UNION ALL
 
+    -- ukrr
+    SELECT DISTINCT
+        'UKRR' AS table_name,
+        'dataset' AS column_name,
+        dataset AS column_value
+    FROM UKRR
+    UNION ALL
+
     -- vaccinations
     SELECT DISTINCT
         'vaccinations' AS table_name,
