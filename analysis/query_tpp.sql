@@ -114,6 +114,12 @@ WITH categorical_columns AS (
         VaccinationContent AS column_value
     FROM VaccinationReference
     UNION ALL
+    SELECT DISTINCT
+        'vaccinations' AS table_name,
+        'product_name' AS column_name, 
+        VaccinationName AS column_value
+    FROM VaccinationReference 
+    UNION ALL 
 
     -- wl_clockstops
     SELECT DISTINCT
