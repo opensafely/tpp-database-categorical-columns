@@ -1,3 +1,7 @@
+# Deprecation warning
+
+This repository has been deprecated and its code ported to https://github.com/opensafely/tpp-database-schema
+
 # tpp-database-categorical-columns
 
 [View on OpenSAFELY](https://jobs.opensafely.org/opensafely-internal/tpp-database-categorical-columns/)
